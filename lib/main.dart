@@ -1,27 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+// * page files
 import 'package:sherum/pages/home_page.dart';
 import 'package:sherum/pages/album_page.dart';
 import 'package:sherum/pages/search_page.dart';
 import 'package:sherum/pages/my_page.dart';
-
-class Common {
-  static const int _primaryValue = 0xFFF8BBD0;
-  static const MaterialColor primaryColor = MaterialColor(
-    _primaryValue,
-    <int, Color>{
-      50: Color(0xFFF8BBD0),
-      100: Color(0xFFF8BBD0),
-      200: Color(0xFFF8BBD0),
-      300: Color(0xFFF8BBD0),
-      400: Color(0xFFF8BBD0),
-      500: Color(_primaryValue),
-      600: Color(0xFFF8BBD0),
-      700: Color(0xFFF8BBD0),
-      800: Color(0xFFF8BBD0),
-      900: Color(0xFFF8BBD0),
-    },
-  );
-}
+// * theme files
+import 'package:sherum/theme/light_theme.dart';
+import 'package:sherum/theme/dark_theme.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,9 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'sherum main',
-      theme: ThemeData(
-        primarySwatch: Common.primaryColor,
-      ),
+      theme: LightTheme.data,
+      darkTheme: DarkTheme.data,
       home: AppPage(),
     );
   }
@@ -78,6 +63,9 @@ class _AppPageState extends State<AppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('SHERUM'),
+      ),
       body: _pageList[_page],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
