@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 // * page files
@@ -8,6 +9,8 @@ import 'package:sherum/pages/my_page.dart';
 // * theme files
 import 'package:sherum/theme/light_theme.dart';
 import 'package:sherum/theme/dark_theme.dart';
+// * assets files
+import 'package:sherum/my_flutter_app_icons.dart';
 
 void main() => runApp(MyApp());
 
@@ -31,7 +34,7 @@ class AppPage extends StatefulWidget {
 class _AppPageState extends State<AppPage> {
   int _page = 0;
 
-  static List<Widget> _pageList = [
+  static final List<Widget> _pageList = [
     HomePage(),
     AlbumPage(),
     SearchPage(),
@@ -40,22 +43,25 @@ class _AppPageState extends State<AppPage> {
 
   List<BottomNavigationBarItem> MyBottomNavBarItems() {
     return [
-      BottomNavigationBarItem(
-        icon: Icon(Icons.home),
-        label: 'Home',
+      const BottomNavigationBarItem(
+        icon: Icon(Icons.home_outlined),
+        activeIcon: Icon(Icons.home),
+        label: '',
       ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.book),
-        label: 'Album',
+      const BottomNavigationBarItem(
+        icon: Icon(Icons.book_outlined),
         activeIcon: Icon(Icons.auto_stories),
+        label: '',
       ),
-      BottomNavigationBarItem(
+      const BottomNavigationBarItem(
         icon: Icon(Icons.search),
-        label: 'Search',
+        activeIcon: Icon(MyFlutterApp.search_2),
+        label: '',
       ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.account_circle),
-        label: 'MyPage',
+      const BottomNavigationBarItem(
+        icon: Icon(Icons.account_circle_outlined),
+        activeIcon: Icon(Icons.account_circle),
+        label: '',
       ),
     ];
   }
@@ -63,9 +69,6 @@ class _AppPageState extends State<AppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('SHERUM'),
-      ),
       body: _pageList[_page],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
