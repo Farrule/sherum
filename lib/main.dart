@@ -1,11 +1,12 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:provider/provider.dart';
 // * page files
-import 'package:sherum/pages/home_page.dart';
-import 'package:sherum/pages/album_page.dart';
-import 'package:sherum/pages/search_page.dart';
-import 'package:sherum/pages/my_page.dart';
+import 'package:sherum/routes/home_pages/home_page.dart';
+import 'package:sherum/routes/album_pages/album_home.dart';
+import 'package:sherum/routes/search_pages/search_page.dart';
+import 'package:sherum/routes/my_pages/my_page.dart';
 // * theme files
 import 'package:sherum/theme/light_theme.dart';
 import 'package:sherum/theme/dark_theme.dart';
@@ -36,7 +37,7 @@ class _AppPageState extends State<AppPage> {
 
   static final List<Widget> _pageList = [
     HomePage(),
-    AlbumPage(),
+    AlbumHome(),
     SearchPage(),
     MyPage()
   ];

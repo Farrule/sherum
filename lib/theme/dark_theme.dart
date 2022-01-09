@@ -13,7 +13,7 @@ class DarkTheme {
     primarySwatch: _primary,
     accentColor: _accent,
     scaffoldBackgroundColor: Colors.black,
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       headline1: TextStyle(color: Colors.white),
       headline2: TextStyle(color: Colors.white),
       headline3: TextStyle(color: Colors.white),
@@ -28,9 +28,18 @@ class DarkTheme {
       caption: TextStyle(color: Colors.white),
       overline: TextStyle(color: Colors.white)
     ),
-    buttonTheme: ButtonThemeData(
+    // * appBarTheme
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.black,
+      actionsIconTheme: IconThemeData(color: Colors.white),
+      iconTheme: IconThemeData(color: Colors.white),
+      titleTextStyle: TextStyle(
+        color: Colors.white,
+      )
+    ),
+    buttonTheme: const ButtonThemeData(
       textTheme: ButtonTextTheme.primary,
-      shape: const RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(24)),
       ),
     ),
@@ -41,10 +50,10 @@ class DarkTheme {
     ),
     inputDecorationTheme: InputDecorationTheme(
       enabledBorder: const OutlineInputBorder(
-        borderSide: const BorderSide(color: Colors.green),
+        borderSide: BorderSide(color: Colors.green),
       ),
       focusedBorder: const OutlineInputBorder(
-        borderSide: const BorderSide(color: Colors.greenAccent),
+        borderSide: BorderSide(color: Colors.greenAccent),
       ),
       fillColor: Colors.orange.shade50,
       labelStyle: const TextStyle(
@@ -66,7 +75,7 @@ class DarkTheme {
       onSurface: _primary,
     ),
     dialogTheme: const DialogTheme(
-        titleTextStyle: const TextStyle(
+        titleTextStyle: TextStyle(
       color: Colors.deepOrange,
     )),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(

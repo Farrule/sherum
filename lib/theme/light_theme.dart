@@ -34,7 +34,8 @@ class LightTheme {
     primarySwatch: _primary,
     accentColor: _accent,
     scaffoldBackgroundColor: Colors.white,
-    textTheme: TextTheme(
+    // * textTheme
+    textTheme: const TextTheme(
       headline1: TextStyle(color: Colors.black),
       headline2: TextStyle(color: Colors.black),
       headline3: TextStyle(color: Colors.black),
@@ -49,12 +50,23 @@ class LightTheme {
       caption: TextStyle(color: Colors.black),
       overline: TextStyle(color: Colors.black),
     ),
+    // * appBarTheme
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.white,
+      actionsIconTheme: IconThemeData(color: Colors.black),
+      iconTheme: IconThemeData(color: Colors.black),
+      titleTextStyle: TextStyle(
+        color: Colors.black,
+      )
+    ),
+    // * buttomTheme
     buttonTheme: const ButtonThemeData(
       textTheme: ButtonTextTheme.primary,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(24)),
       ),
     ),
+    // * primaryTextTheme
     primaryTextTheme: const TextTheme().copyWith(
       subtitle1: const TextStyle().copyWith(
         color: Colors.teal,
@@ -62,7 +74,7 @@ class LightTheme {
     ),
     inputDecorationTheme: InputDecorationTheme(
       enabledBorder: const OutlineInputBorder(
-        borderSide: const BorderSide(color: Colors.green),
+        borderSide: BorderSide(color: Colors.green),
       ),
       focusedBorder: const OutlineInputBorder(
         borderSide: BorderSide(color: Colors.greenAccent),

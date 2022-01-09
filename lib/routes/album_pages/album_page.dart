@@ -40,13 +40,22 @@ class _AlbumPageState extends State<AlbumPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(''),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _image == null ? Text('No image selected.') : Image.file(_image!),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Row(
@@ -54,11 +63,11 @@ class _AlbumPageState extends State<AlbumPage> {
               children: [
                 FloatingActionButton(
                   onPressed: getImageFromCamera,
-                  child: Icon(Icons.add_a_photo),
+                  child: const Icon(Icons.add_a_photo),
                 ),
                 FloatingActionButton(
                   onPressed: _getImage,
-                  child: Icon(Icons.image),
+                  child: const Icon(Icons.image),
                 ),
               ],
             )
