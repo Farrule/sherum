@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'sherum main',
       theme: LightTheme.data,
       darkTheme: DarkTheme.data,
@@ -42,31 +43,6 @@ class _AppPageState extends State<AppPage> {
     MyPage()
   ];
 
-  List<BottomNavigationBarItem> MyBottomNavBarItems() {
-    return [
-      const BottomNavigationBarItem(
-        icon: Icon(Icons.home_outlined),
-        activeIcon: Icon(Icons.home),
-        label: '',
-      ),
-      const BottomNavigationBarItem(
-        icon: Icon(Icons.book_outlined),
-        activeIcon: Icon(Icons.auto_stories),
-        label: '',
-      ),
-      const BottomNavigationBarItem(
-        icon: Icon(Icons.search),
-        activeIcon: Icon(MyFlutterApp.search_2),
-        label: '',
-      ),
-      const BottomNavigationBarItem(
-        icon: Icon(Icons.account_circle_outlined),
-        activeIcon: Icon(Icons.account_circle),
-        label: '',
-      ),
-    ];
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,12 +50,29 @@ class _AppPageState extends State<AppPage> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _page,
-        onTap: (index) {
-          setState(() {
-            _page = index;
-          }); // setState
-        }, // onTap
-        items: MyBottomNavBarItems(),
+        onTap: (index) {setState(() {_page = index;});}, // onTap
+        items: const <BottomNavigationBarItem> [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined),
+            activeIcon: Icon(Icons.home),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.book_outlined),
+            activeIcon: Icon(Icons.auto_stories),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            activeIcon: Icon(MyFlutterApp.search_2),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_outlined),
+            activeIcon: Icon(Icons.account_circle),
+            label: '',
+          ),
+        ],
       ),
     );
   }
