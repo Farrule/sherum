@@ -10,15 +10,12 @@ class _MyPageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[const Text('MyPage')],
-          ),
-        ),
-      ),
+      body: Column(
+        children: [
+          Card(
+            borderOnForeground: true,
+          )
+        ],)
     );
   }
 }
